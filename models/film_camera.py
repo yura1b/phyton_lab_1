@@ -16,16 +16,24 @@ class FilmCamera(Camera):
         super().__init__(brand, model, lens)
         self.film_type = film_type
         self.film_iso = film_iso
+        self.material_set = set()
 
     def take_photo(self):
         """
             Method that returns info about photo
         """
-        print("Photo with..." + self.film_type + self.film_iso)
+        print("Photo with..." + self.film_type + str(self.film_iso))
 
     def __str__(self):
         """
         Method str which return line with camera object parameters
         """
-        return f"\n brand: {self.brand}, model:{self.model},lens={self.lens},film type:{self.film_type}" \
+        return f"\n brand: {self.brand}, model:{self.model}," \
+               f"lens={self.lens},film type:{self.film_type}" \
                f",filmISO:{self.film_iso}"
+
+    def camera_material(self):
+        """
+            Method camera_material which return camera materials
+        """
+        return self.material_set
