@@ -15,6 +15,7 @@ class NightCamera(Camera):
         """
         super().__init__(brand, model, lens)
         self.has_zoom = has_zoom
+        self.material_set = set()
 
     def take_photo(self):
         """
@@ -26,4 +27,11 @@ class NightCamera(Camera):
         """
         Method str which return line with camera object parameters
         """
-        return f"\n brand:{self.brand}, model:{self.model}, lens={self.lens}, has zoom:{self.has_zoom}"
+        return f"\n brand:{self.brand}, model:{self.model}, " \
+               f"lens={self.lens}, has zoom:{self.has_zoom}"
+
+    def camera_material(self):
+        """
+            Method camera_material which return camera materials
+        """
+        return self.material_set
